@@ -54,10 +54,15 @@ hist(conjunto$Diametro, col="lightblue", xlab = "Diámentro", ylab = "Frecuencia
 # Graficas ----------------------------------------------------------------
 
 par(mfrow=c(2,2))
-hist(Tsuga_heterófila.h$Altura, main = "Altura especie H", col = "Blue" , xlab = "Altura", ylab = Frecuencia)
-hist(Douglasia_verde$Altura, main = "Altura especie F", col "blue", xlab = "Altura", ylab = "Frecuencia")
-hist(Tsuga_heterófila$Diametro, main = "Diametro especie H", col = "gren", xlab = "Diametro", ylab = "Frecuencia")
-Hist(Douglasia_verde$Diametro, main = "Diametro especie F", col = "gren", xlab = "Diametro", ylab "Frecuencia")
+hist(Tsuga_heterófila.h$Altura, main = "Altura especie H", col = "blue" 
+     , xlab = "Altura", ylab = Frecuencia)
+hist(Douglasia_verde$Altura, main = "Altura especie F", col= "blue",
+     xlab = "Altura", ylab = "Frecuencia")
+hist(Tsuga_heterófila$Diametro, main = "Diametro especie H", col = "gren", xlab = "Diametro",
+     ylab = "Frecuencia")
+hist(Douglasia_verde$Diametro, main = "Diametro especie F", col = "green", xlab = "Diametro",
+     ylab = "Frecuencia")
+
 # Basicos -----------------------------------------------------------------
 
 mean(conjunto$Altura)
@@ -68,3 +73,4 @@ sd(conjunto$Vecinos)
 
 mean(conjunto$Diametro)
 sd(conjunto$Diametro)
+

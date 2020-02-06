@@ -34,13 +34,16 @@ Cedro_Rojo <- subset(conjunto, conjunto$Especie == "C")
 Diam_cedro <- subset(Cedro_Rojo, Cedro_Rojo$diametro <= 16.9)
 Altura_cedro <- subset(Cedro_Rojo, Cedro_Rojo$Altura > 18.5)
 
-Tsuga_heterófila <- subset(conjunto, conjunto$Especie == "C")
+Tsuga_heterófila <- subset(conjunto, conjunto$Especie == "H")
 Diam_Tsuga <- subset(Tsuga_heterófila, Tsuga_heterófila$diametro <= 16.9 )
 Altura_Tsuga <- subset(Tsuga_heterófila, Tsuga_heterófila$Altura > 18.5)
 
-Douglasia_verde <- subset(conjunto, conjunto$Especie == "c")
-Diam_Douglasia <- subset(Douglasia_verde, Douglasia_verde$diametro <= 16.5)
+Douglasia_verde <- subset(conjunto, conjunto$Especie == "F")
+Diam_Douglasia <- subset(Douglasia_verde, Douglasia_verde$diametro <= 16.9)
 Altura_Douglasia <- subset(Douglasia_verde, Douglasia_verde$Altura > 18.5)
+
+HyF <- rbind(Tsuga_heterófila, Douglasia_verde)
+tsu.doug <- subset(conjunto, conjunto$Especie == "H" | conjunto$Especie =="F")
 
 # Histogramas -------------------------------------------------------------
 
@@ -48,6 +51,13 @@ hist(conjunto$Altura, col="yellow", xlab="Altura (m)", ylab= "Frecuencia", main 
 hist(conjunto$Vecinos, col="blue", xlab="Vecinos", ylab="Frecuencia", main = "Histograma de Vecinos",)
 hist(conjunto$Diametro, col="lightblue", xlab = "Diámentro", ylab = "Frecuencia", main = "Histograma de Diametro")
 
+# Graficas ----------------------------------------------------------------
+
+par(mfrow=c(2,2))
+hist(Tsuga_heterófila.h$Altura, main = "Altura especie H", col = "Blue" , xlab = "Altura", ylab = Frecuencia)
+hist(Douglasia_verde$Altura, main = "Altura especie F", col "blue", xlab = "Altura", ylab = "Frecuencia")
+hist(Tsuga_heterófila$Diametro, main = "Diametro especie H", col = "gren", xlab = "Diametro", ylab = "Frecuencia")
+Hist(Douglasia_verde$Diametro, main = "Diametro especie F", col = "gren", xlab = "Diametro", ylab "Frecuencia")
 # Basicos -----------------------------------------------------------------
 
 mean(conjunto$Altura)
